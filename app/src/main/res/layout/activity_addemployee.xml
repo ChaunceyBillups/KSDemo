@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@android:color/white">
+
+    <include
+            android:id="@+id/about_top"
+            layout="@layout/common_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+    <LinearLayout
+            android:id="@+id/image_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/about_top"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center">
+
+        <ImageView
+                android:id="@+id/img_portrait"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/frame_bg"/>
+
+        <Button
+                android:id="@+id/btn_selectimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="选择图片"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/name_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/image_panel"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+        <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:hint="请输入姓名"
+                android:textSize="22dp" />
+
+        <Button
+                android:id="@+id/btn_addemployee"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="添加人员"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_below="@+id/name_panel"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="说明：\n
+1、如果A和B两个名字传了相同的照片，那么识别的时候根据数据查询的先后排序，同一张照片可能识别为A，也可能识别为B\n
+2、如果同样的名字用了多张照片，那么多张照片识别的时候均显示同一个名字"
+            android:textSize="16dp" />
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CameraView">
+        <attr name="scale">
+            <enum name="auto" value="0"/>
+            <enum name="scale_4_3" value="1"/>
+            <enum name="scale_16_9" value="2"/>
+        </attr>
+        <attr name="resolution" format="integer"/>
+        <attr name="cameraFacing">
+            <enum name="back" value="0"/>
+            <enum name="front" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
