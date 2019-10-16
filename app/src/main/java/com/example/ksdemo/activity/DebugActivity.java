@@ -1,6 +1,7 @@
 package com.example.ksdemo.activity;
 
 import com.example.ksdemo.R;
+import com.example.ksdemo.cameratest.TestCameraActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class DebugActivity extends BaseActivity implements View.OnClickListener{
         findViewById(R.id.employee_add_panel).setOnClickListener(this);
         findViewById(R.id.employee_status_panel).setOnClickListener(this);
         findViewById(R.id.employee_oneonecompare).setOnClickListener(this);
+        findViewById(R.id.test_camera).setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +51,10 @@ public class DebugActivity extends BaseActivity implements View.OnClickListener{
             case R.id.employee_oneonecompare:
                 Intent intent2 = new Intent(this, One2OneCompareActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.test_camera:
+                Intent intent3 = new Intent(this, TestCameraActivity.class);
+                startActivity(intent3);
                 break;
         }
     }

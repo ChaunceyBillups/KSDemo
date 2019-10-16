@@ -46,6 +46,10 @@
         <activity
                 android:name=".activity.One2OneCompareActivity"
                 android:theme="@style/AI_FullScreen" />
+
+        <activity
+                android:name=".cameratest.TestCameraActivity"
+                android:theme="@style/AI_FullScreen" />
     </application>
 
 </manifest>

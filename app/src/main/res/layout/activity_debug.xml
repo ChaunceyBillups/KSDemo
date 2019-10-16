@@ -105,4 +105,35 @@
                 android:background="@mipmap/list_divider" />
     </LinearLayout>
 
+    <LinearLayout
+            android:id="@+id/test_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_btn_selector"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/list_divider" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="相机调试(使用TestCameraView,不影响正常的CameraView)"
+                android:textColor="#444348"
+                android:textSize="14dp" />
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@mipmap/list_divider" />
+    </LinearLayout>
+
 </LinearLayout>

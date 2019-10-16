@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0099cc"
+        tools:context=".activity.MainActivity">
+
+    <com.example.ksdemo.cameratest.TestCameraView
+            android:id="@+id/test_camera_view"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_alignParentLeft="true"
+            app:resolution="720"
+            app:scale="scale_4_3" />
+
+    <TextView
+            android:id="@+id/camera_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:text="记录列表"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+
+
+    <ImageView
+            android:id="@+id/stream_img"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true" />
+
+    <TextView
+            android:id="@+id/stream_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="320dp"
+            android:text="记录列表"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+
+    <TextView
+            android:id="@+id/desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="400dp"
+            android:text="@string/desc"
+            android:textColor="#ffffff"
+            android:textSize="14dp" />
+
+</RelativeLayout>

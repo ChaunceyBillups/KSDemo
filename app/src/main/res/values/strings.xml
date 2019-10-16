@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">KSDemo</string>
+    <string name="desc">说明:\n 1、相机是分预览和输出流两部分的，两部分是相互独立的，互补影响。
+        预览界面是给用户看的，输出流部分是给算法使用的。
+        手机的行业标准比较统一，预览界面默认是横屏的，竖屏需要旋转90°。输出流需要旋转270°对应竖屏。\n
+        2、对于旷世的算法，他需要的相机的输出流就是当前TestCameraActivity在手机上运行时展示的方向，
+        如果您手中的设备运行起来之后输出流展示的方向和手机运行起来不一致，您可以使用旋转方法把输出流的方向旋转的和手机一致\n
+        3、预览的旋转角度修改使用camera.setDisplayOrientation方法，输出流旋转可在相机的onPreviewFrame回调方法中进行，本demo
+        在Systems类中也提供了旋转方法</string>
 </resources>
