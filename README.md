@@ -36,6 +36,7 @@ private static final String sk = "";
 
 
 #附件文档说明
+
 1、FacePass Android 创建应用及获取授权信息步骤
 	
 	了解应用的创建过程以及获取相应的APPkey和秘钥信息。
