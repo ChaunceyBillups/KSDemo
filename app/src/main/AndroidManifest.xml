@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.example.ksdemo">
+        package="megvii.testfacepass1">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,15 +11,15 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:name="megvii.testfacepass.App">
 
-        <activity
-                android:name=".activity.WelcomeActivity"
+        <activity android:name="megvii.testfacepass.activity.AuthActivity"
                 android:theme="@style/AI_FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,29 +27,18 @@
             </intent-filter>
         </activity>
 
-        <activity
-                android:name=".activity.MainActivity"
-                android:theme="@style/AI_FullScreen"></activity>
+        <activity android:name="megvii.testfacepass.activity.MainActivity"
+                android:theme="@style/AI_FullScreen">
+        </activity>
 
-        <activity
-                android:name=".activity.DebugActivity"
-                android:theme="@style/AI_FullScreen" />
+        <activity android:name="megvii.testfacepass.activity.DebugActivity"/>
 
-        <activity
-                android:name=".activity.AddEmployeeActivity"
-                android:theme="@style/AI_FullScreen" />
+        <activity android:name="megvii.testfacepass.activity.AddEmployeeActivity"/>
 
-        <activity
-                android:name=".activity.EmployeeListActivity"
-                android:theme="@style/AI_FullScreen" />
+        <activity android:name="megvii.testfacepass.activity.EmployeeListActivity"/>
 
-        <activity
-                android:name=".activity.One2OneCompareActivity"
-                android:theme="@style/AI_FullScreen" />
-
-        <activity
-                android:name=".cameratest.TestCameraActivity"
-                android:theme="@style/AI_FullScreen" />
+        <activity android:name="megvii.testfacepass.activity.One2OneCompareActivity"/>
+        <activity android:name="megvii.testfacepass.activity.WelcomeActivity"/>
     </application>
 
 </manifest>

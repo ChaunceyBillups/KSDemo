@@ -7,14 +7,14 @@
         android:background="#0099cc"
         tools:context=".activity.MainActivity">
 
-    <com.example.ksdemo.camera.CameraView
+    <com.example.testfacepass1.camera.CameraView
             android:id="@+id/camera_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:resolution="720"
             app:scale="scale_4_3"/>
 
-    <com.example.ksdemo.widget.FaceViewKS
+    <com.example.testfacepass1.widget.FaceViewKS
             android:id="@+id/faceview_ks"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
