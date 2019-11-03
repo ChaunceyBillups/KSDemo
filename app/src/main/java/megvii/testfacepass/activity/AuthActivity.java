@@ -23,12 +23,11 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mAuthStatus;
     /* 程序所需权限 ：相机 文件存储 网络访问 */
     private static final int PERMISSIONS_REQUEST = 1;
-    private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
     private static final String PERMISSION_WRITE_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
     private static final String PERMISSION_READ_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE;
     private static final String PERMISSION_INTERNET = Manifest.permission.INTERNET;
     private static final String PERMISSION_ACCESS_NETWORK_STATE = Manifest.permission.ACCESS_NETWORK_STATE;
-    private String[] Permission = new String[]{PERMISSION_CAMERA, PERMISSION_WRITE_STORAGE, PERMISSION_READ_STORAGE, PERMISSION_INTERNET, PERMISSION_ACCESS_NETWORK_STATE};
+    private String[] Permission = new String[]{ PERMISSION_WRITE_STORAGE, PERMISSION_READ_STORAGE, PERMISSION_INTERNET, PERMISSION_ACCESS_NETWORK_STATE};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +105,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     /* 判断程序是否有所需权限 android22以上需要自申请权限 */
     private boolean hasPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return checkSelfPermission(PERMISSION_CAMERA) == PackageManager.PERMISSION_GRANTED &&
+            return
                     checkSelfPermission(PERMISSION_READ_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                     checkSelfPermission(PERMISSION_WRITE_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                     checkSelfPermission(PERMISSION_INTERNET) == PackageManager.PERMISSION_GRANTED &&
