@@ -12,7 +12,9 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -37,6 +39,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.ListPopupWindow;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
@@ -311,13 +314,31 @@ public class MultiImageSelectorFragment extends Fragment {
         }else {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+
+                String imagePath = getContext().getCacheDir().getPath() + "/images";
+                File parent = new File(imagePath);
+                if (!parent.exists()) {
+                    parent.mkdirs();
+                }
+
+                mTmpFile = new File(imagePath + "/tmp.jpg");
                 try {
-                    mTmpFile = FileUtils.createTmpFile(getActivity());
+                    mTmpFile.createNewFile();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
                 if (mTmpFile != null && mTmpFile.exists()) {
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        //设置7.0中共享文件，分享路径定义在xml/provider_pathsaths.xml
+                        intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                        //BuildConfig.APPLICATION_ID + ".fileProvider"
+                        //这个参数就是之前说到的android:authorities标识了
+                        Uri contentUri = FileProvider.getUriForFile(getContext(), "me.nereo.multi_image_selector.fileProvider", mTmpFile);
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+                    } else {
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mTmpFile));
+                    }
                     startActivityForResult(intent, REQUEST_CAMERA);
                 } else {
                     Toast.makeText(getActivity(), R.string.mis_error_image_not_exist, Toast.LENGTH_SHORT).show();
