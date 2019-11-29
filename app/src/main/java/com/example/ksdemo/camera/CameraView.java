@@ -335,7 +335,7 @@ public class CameraView extends SurfaceView implements Camera.AutoFocusCallback 
                 Log.v(TAG, "releaseCamera()");
             }
             mCamera.setPreviewCallbackWithBuffer(null);
-            mCamera.stopFaceDetection();
+            // mCamera.stopFaceDetection();
             mCamera.stopPreview();
             mCamera.release();
             mCamera = null;
