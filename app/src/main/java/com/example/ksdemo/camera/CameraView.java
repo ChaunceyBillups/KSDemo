@@ -204,7 +204,7 @@ public class CameraView extends SurfaceView implements Camera.AutoFocusCallback 
         if (mCamera == null) {
             return;
         }
-        mCamera.stopFaceDetection();
+        // mCamera.stopFaceDetection();
         mCamera.stopPreview(); // 1.先停止预览
         setCameraDisplayOrientation((Activity) getContext(), mCamera); // 2.设置相机的显示方向
         initPreviewSize(); // 3.初始化相机预览尺寸
@@ -335,7 +335,7 @@ public class CameraView extends SurfaceView implements Camera.AutoFocusCallback 
                 Log.v(TAG, "releaseCamera()");
             }
             mCamera.setPreviewCallbackWithBuffer(null);
-            mCamera.stopFaceDetection();
+            // mCamera.stopFaceDetection();
             mCamera.stopPreview();
             mCamera.release();
             mCamera = null;
