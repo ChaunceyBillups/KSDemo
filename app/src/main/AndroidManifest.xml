@@ -39,6 +39,7 @@
 
         <activity android:name="megvii.testfacepass.activity.One2OneCompareActivity"/>
         <activity android:name="megvii.testfacepass.activity.WelcomeActivity"/>
+        <activity android:name="megvii.testfacepass.activity.ProxyServerAuthActivity"/>
     </application>
 
 </manifest>

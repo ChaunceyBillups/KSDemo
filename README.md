@@ -11,9 +11,13 @@
 
 	1.1、generate_fingerprint方法获取设备指纹文件request.c2v；
 
-    1.2、拿到authFile.v2c文件放在指定的位置后，调用activate_device方法，对授权进行激活；
+    1.2、在旷世平台上面下载通讯文件，放在SD卡跟目录下的Download文件夹下面
+![](/second.png)
 
-	1.3、激活成功后将进入WelcomeActivity；
+	1.3、修改代码里对应通信文件的名称；
+![](/three.png)
+
+	1.4、激活成功后将进入WelcomeActivity；
 	
 
 2、SDK初始化方法是WelcomeActivity的initSDK方法，可以修改人脸识别分数，活体检测等各种属性
@@ -38,21 +42,8 @@
 
 	8、人员的数据库管理封装在db包中
 
-#3.3更新功能
-
-	1. 更新活体、识别模型，提高模型性能；
-	
-	2. 增加遮挡模型，支持人脸部分遮挡过滤；
-	3. 
-	3. 增加特征抽取接口，增加特征入库接口，配合x86 质量特征比对SDK使用。
-	 
-	4. 增加MegSafe新软授权方案；
-	 
-	5. 解决双目活体模型在多人脸同时活体检测时crash的问题；
-	
-	6. 优化feedFrame和IRFilter接口，增强对低质量检测结果的过滤；
-	
-	7. 优化更新badcase图片保存功能
+#3.4.2更新功能
+![](/update.png)
 
 #附件文档说明
 

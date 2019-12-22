@@ -34,7 +34,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation(name: 'FacePassAndroidSDK-MegSafe-release', ext: 'aar')
-    implementation(name: 'authapi-release', ext: 'aar')
+    implementation(name: 'authapi-release-net-beta4-20191123', ext: 'aar')
+    compile('org.kie.modules:com-fasterxml-jackson:6.5.0.Final')
+    implementation('com.loopj.android:android-async-http:1.4.4')
     implementation 'com.android.support:appcompat-v7:28.+'
     implementation project(path: ':multi-image-selector')
 }
